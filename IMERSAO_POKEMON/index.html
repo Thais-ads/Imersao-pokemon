@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>titulo-ABA</title>
+    <link rel="stylesheet" href="/src/css/style.css">
+    <link rel="icon" href="src/imagens/pokeball.png" type="image/x-con">
+      
+      
+</head>
+
+<body >
+    <header class="fundo-titulo">
+       
+        <a><img src="/src/imagens/pokeball.png" alt="pokebola" class="logo">       
+
+
+        </a>
+        <img src="/src/imagens/pokemon-png-logo.png" alt="Pokemon" class="logo_imagem">
+        <button id="botao-alterar-tema">
+            <img src="/src/imagens/sun.png" alt="sol" class="imagem-botao">
+        </button>
+    </header>
+    <main>
+        <ul id="lista">
+        </ul>
+    </main>
+   <script type="text/javascript" defer>
+         let dicionario = {
+            bulbasaur: ["./src/imagens/bulbasaur.gif", ["grama", "veneno"], "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, impedit necessitatibus odiorepellendus doloribus voluptatum voluptas corrupti possimus iusto unde saepe, qui ab aperiam quanostrum vero ut facilis numquam"],
+            ivysaur: ["./src/imagens/ivysaur.gif", ["grama", "veneno"], "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, impedit necessitatibus odiorepellendus doloribus voluptatum voluptas corrupti possimus iusto unde saepe, qui ab aperiam quanostrum vero ut facilis numquam"],
+            venusaur: ["./src/imagens/venusaur.gif", ["grama", "veneno"], "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, impedit necessitatibus odiorepellendus doloribus voluptatum voluptas corrupti possimus iusto unde saepe, qui ab aperiam quanostrum vero ut facilis numquam"],
+            charmander: ["./src/imagens/charmander.gif", "fogo", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, impedit necessitatibus odiorepellendus doloribus voluptatum voluptas corrupti possimus iusto unde saepe, qui ab aperiam quanostrum vero ut facilis numquam"],
+            charmeleon:["./src/imagens/charmeleon.gif","fogo","Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, impedit necessitatibus odiorepellendus doloribus voluptatum voluptas corrupti possimus iusto unde saepe, qui ab aperiam quanostrum vero ut facilis numquam"],
+            charizard: ["./src/imagens/charizard.gif", "fogo", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, impedit necessitatibus odiorepellendus doloribus voluptatum voluptas corrupti possimus iusto unde saepe, qui ab aperiam quanostrum vero ut facilis numquam"],
+            squirtle: ["./src/imagens/squirtle.gif", "agua", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, impedit necessitatibus odiorepellendus doloribus voluptatum voluptas corrupti possimus iusto unde saepe, qui ab aperiam quanostrum vero ut facilis numquam"],
+            wartortle: ["./src/imagens/wartortle.gif", "agua", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, impedit necessitatibus odiorepellendus doloribus voluptatum voluptas corrupti possimus iusto unde saepe, qui ab aperiam quanostrum vero ut facilis numquam"],
+            blastoise: ["./src/imagens/blastoise.gif", "agua", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, impedit necessitatibus odiorepellendus doloribus voluptatum voluptas corrupti possimus iusto unde saepe, qui ab aperiam quanostrum vero ut facilis numquam"],
+            caterpie: ["./src/imagens/caterpie.gif", "inseto", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, impedit necessitatibus odiorepellendus doloribus voluptatum voluptas corrupti possimus iusto unde saepe, qui ab aperiam quanostrum vero ut facilis numquam"]
+              
+        }
+        let lista = document.getElementById("lista"); // Recupera um elemento HTML existente no DOM
+        for (let chave in dicionario) {
+            // debugger;
+            let valor = dicionario[chave];
+
+            //<span class="">
+            let nomePokemon = document.createElement("span");  //<span >
+                
+
+            //<img class="gif">
+            let img = document.createElement("img"); 
+            img.classList.add('gif'); 
+                    
+            //<p>
+            let paragrafo = document.createElement("p"); 
+             //<li>
+            const cardPokemon = document.createElement("li");  
+
+            
+            nomePokemon.innerHTML = chave;  // nome do pokemon
+                
+
+
+            img.src = valor[0];                         
+            let poderes = valor[1];
+            paragrafo.innerHTML = valor[2];
+
+            if(Array.isArray(poderes)){
+                cardPokemon.classList.add('teste_'+poderes[0]); 
+            } else {
+                cardPokemon.classList.add('teste_'+valor[1]); 
+            }
+             
+            //<div class="informacoes">
+            const cardinfo = document.createElement("div")
+            
+            cardinfo.appendChild(nomePokemon); 
+            cardinfo.classList.add('informacoes');
+            
+            cardPokemon.appendChild(cardinfo)  
+                       
+            cardPokemon.appendChild(img);
+
+            //<ul class="listapoderes">
+            const cardpoder = document.createElement("ul"); 
+            cardpoder.classList.add('listapoderes')
+            
+            if (Array.isArray(poderes)) {   
+
+                //<li class="tipo_">
+                let poderUm = document.createElement("li"); 
+                poderUm.classList.add('tipo_'+poderes[0]); 
+                
+                //<li class="tipo_">
+                let poderDois = document.createElement("li");
+                poderDois.classList.add('tipo_'+poderes[1]); 
+
+                poderUm.innerHTML = poderes[0]
+                poderDois.innerHTML = poderes[1]
+                cardpoder.appendChild(poderUm);
+                cardpoder.appendChild(poderDois);
+
+            } else {
+
+                 //<li class="tipo_">
+                let poderUm = document.createElement("li");
+                poderUm.classList.add('tipo_'+valor[1]); 
+                poderUm.innerHTML = valor[1]
+                cardpoder.appendChild(poderUm);
+            }
+            cardPokemon.appendChild(cardpoder);
+            cardPokemon.appendChild(paragrafo); 
+            lista.appendChild(cardPokemon); // Adiciona o elemento ao <ul> existente no DOM                      
+        }
+    </script>
+    <script src="src/script/script.js"></script>
+</body>
+
+</html>

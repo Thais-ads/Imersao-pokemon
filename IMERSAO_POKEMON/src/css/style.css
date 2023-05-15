@@ -1,0 +1,185 @@
+
+
+#lista {
+    display: flex;
+    padding: 10px;
+    margin: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    width: 1500px;
+    flex-direction:row;
+}
+
+main{
+  display: flex;
+  justify-content: center;
+}
+
+.informacoes{
+  background-color: rgb(222, 228, 228);
+  margin-bottom: 10px;
+  border-radius: 10px;
+  padding: 10px;
+  text-transform: uppercase;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+
+}
+
+.logo_imagem{
+  width: 300px;
+  height: 120px;
+}
+
+body{
+  background-image: url("/src/imagens/selva.jpg");
+  background-size: cover;
+}
+
+.fundoimg{
+  background-image: url("/src/imagens/selvanoite.jpg");
+  background-size: cover;
+}
+
+.testecardg{
+  background-image: url("/src/imagens/fundoteste.png");
+}
+
+.teste_grama,
+.teste_fogo,
+.teste_inseto,
+.teste_agua{
+  background-color: rgb(226, 222, 215);
+ 
+  width: 250px;
+  height: 450px;
+  padding: 15px;
+
+  border-radius: 15px;
+  flex-wrap: wrap;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.teste_fogo:hover{
+  background-color: rgb(225, 62, 21);
+}
+.teste_grama:hover{
+  background-color: rgb(20, 138, 40);
+}
+.teste_inseto:hover{
+  background-color: rgb(68, 233, 81);
+}
+.teste_agua:hover{
+  background-color: rgb(49, 146, 225);
+}
+
+
+
+
+.gif{
+    
+    width: 90px;
+    height: 90px;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    border-radius: 15px;
+    transition: 0.5s ease-in-out;
+
+}
+.fundo-titulo{
+  background-color:rgba(226, 222, 215, 0)
+}
+.Titulo{
+  
+  color: rgb(14, 0, 26);
+  font-size: 40px;
+ font-family: 'poppins',sans-serif;
+  }
+
+header #botao-alterar-tema{
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+header .logo:hover,
+header .imagem-botao:hover,
+main.cartao-pokemon:hover{
+    transform: scale(1.10);
+    cursor: pointer;
+    
+}
+
+
+
+header{
+  display: flex;
+  justify-content: space-between; 
+}
+
+header .logo,
+header .imagem-botao{
+  justify-content: space-between; 
+  padding: 25px;
+  width: 50px;
+  text-align: center;
+}
+
+.listapoderes{
+  display: flex;
+  gap: 15px;
+  padding:0px;
+  
+  
+}
+
+main  .tipo_veneno,
+.tipo_fogo,
+.tipo_grama,
+.tipo_inseto,
+.tipo_agua{
+  list-style: none;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  justify-content: center;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-top: 5px;
+
+}
+
+.tipo_veneno{
+  background-color: violet;
+  left: 20px;
+  
+  
+}
+
+.tipo_fogo{
+  background-color: red;
+
+}
+
+.tipo_grama{
+  background-color: green;
+  
+}
+
+.tipo_inseto{
+  background-color: rgb(80, 207, 80);
+
+}
+
+.tipo_agua{
+  background-color: rgb(91, 170, 219);
+
+}
